@@ -1,0 +1,47 @@
+<!doctype html>
+<html>
+    <head>
+        <title>Feedback</title>
+        <link href="./styles/main.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1>Webpage Feedback</h1>
+        <h2>We value your feedback</h2>
+        <p>Please complete the following form to help us improve the content of our recipe website.</p>
+        <form id="form">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name"><br><br>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email"><br><br>
+            <label for="subject">Subject:</label>
+            <input type="text" id="subject" name="subject"><br><br>
+            <label for="message">Message:</label><br><br>
+            <textarea id="message" name="message" rows="6" cols="50"></textarea><br><br>
+            <p id="log"></p>
+            <input type="submit" value="Submit">
+
+        </form>
+        <script>
+            function submit_button(event) {
+                event.preventDefault();
+                var getValueName = document.getElementById("name");
+                var getValueEmail = document.getElementById("email");
+                var getValueSubject = document.getElementById("subject");
+                var getValueMessage = document.getElementById("message");
+                if (getValueName.value == "" || getValueEmail.value == "" || getValueSubject.value == "" || getValueMessage.value == "") {
+                    log.textContent = 'Please fill out all the fields before submitting.';
+                }
+                else {
+                    log.textContent = 'Feedback Submitted Successfully!';
+                    document.getElementById("name").value = '';
+                    document.getElementById("email").value = '';
+                    document.getElementById("subject").value = '';
+                    document.getElementById("message").value = '';
+                }
+            }
+            const form = document.getElementById("form");
+            const log = document.getElementById("log");
+            form.addEventListener("submit", submit_button);
+        </script>
+    </body>
+</html>

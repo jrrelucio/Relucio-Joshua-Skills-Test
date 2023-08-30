@@ -11,9 +11,13 @@ h1 {
 img {
     margin-left: 148px;
 }
-p, ul, ol {
+p, ul, ol, form{
     font-family: Verdana;
     margin-left: 148px;
+}
+
+#log{
+    margin-left: 0px;
 }
 
 a:link {
